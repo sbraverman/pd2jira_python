@@ -1,0 +1,14 @@
+*
+
+!README.md
+!*.py
+!pd2jira_python/*.py
+!pd2jira_python/*.yml
+!.git*
+!requirements.txt
+!setup.sh
+!tests/*.py
+!tests/stubs/*.json
+!CHANGES
+
+!*/

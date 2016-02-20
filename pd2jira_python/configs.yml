@@ -1,0 +1,16 @@
+jira_url: 
+jira_username: 
+jira_password: 
+jira_project: 
+issuetype: Bug
+
+# Labels accepts an array. pager_duty label is set to default. 
+# You may change this or add more labels
+labels:
+  - pager_duty
+
+# Add any custom fields below
+# If you have no custom_fields to add, do not edit below 
+# an example custom field has been added to demonstrate its use
+custom_fields: 
+  # customfield_10021: "As engineer:\n* Investigate the alert\n* Resolve the pager duty alert\n* Create future tickets as necessary"
