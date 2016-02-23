@@ -1,11 +1,11 @@
 # pd2jira-python
 Generate JIRA tickets from Pager Duty alerts using Amazon Web Services (AWS) Lambda!
 
-## What is pd2jira-python?
-pd2jira-python is an open source project that creates JIRA tickets from Pager Duty webhooks
-No need to host the code on your personal server (unless you want to).
+## What is pd2jira\_python?
+pd2jira\_python is an open source project that creates JIRA tickets from Pager Duty webhooks using AWS Lambda. This is a new option for making JIRA tickets from Pager Duty alerts.
+No need to host the code on your personal server (unless you want to). 
 
-pd2jira-python uses the following technologies:
+pd2jira\_python uses the following technologies:
 * Python2.7
 * AWS Lambda
 * AWS API Gateway
@@ -14,10 +14,12 @@ pd2jira-python uses the following technologies:
 ## Let's Get Started!
 pd2jira-python will be up and running within minutes. Just follow this guide!
 
-1. Clone this project into desired local directory
+1. Fork this project into your account and clone into local directory
+
 ``` bash 
-git clone git@github.com:sbraverman/pd2jira-python.git
+git clone git@github.com:<your_github_handle>/pd2jira-python.git
 ```
+_note: replace <your_github_handle> with your Github handle_
 
 2. Replace the comments in the Configs file with your credentials
 _pd2jira-python/pd2jira-python/Configs.yml_
@@ -58,16 +60,27 @@ bash setup.sh
   11. Navigate to "API Endpoints" and copy the API endpoint URL (you will need this in the next step). 
 
 5. Set up Pager Duty webhook.
-  1. Select a service you would like to create ticket or create a new one
+  1. Select a service you would like to create tickets with or create a new service
   2. Click on "Add Webhook"
   3. Give your webhook a name and paste the URL from step 11 in. If you forgot to copy the API endpoint URL, go to AWS, navigate to Lambda, select your newly created Lambda function, and click on "API Endpoints."
   4. You are done! Let's test it out
 
 ## Test your Lambda function
-  1. In Pager Duty, navigate to the alert you set the webhook up with.
-  2. Trigger an alert. NOTE: Make sure the person you are about to alert is aware that you are testing. You may want to create a new service or temporarily set yourself up as the on-call scheduled person. 
-  4. Go to JIRA and ensure your ticket was generated correctly. If you see your ticket, SUCCESS! If your new ticket was not created within 5 seconds, continue to the next step. 
-  3. Log in to AWS. Navigate to your Lambda function. Click on "Monitoring." Click on "View Logs in CloudWatch"
-  4. View the log stream that was generated. This will give you an idea of why your ticket was not generated. Most likely, there are some custom fields you need to set to create tickets or your Configs were not set up properly. When you update the code, you will have to run the setup.sh again and reupload the zip file.  
-  5. The next step you can do is make sure your custom_fields are properly set
+1. In Pager Duty, navigate to the service you added the webhook to.
+2. Trigger an alert. NOTE: Make sure the person you are about to alert is aware that you are testing. You may want to create a new service or temporarily set yourself up as the on-call scheduled person. 
+4. Go to JIRA and ensure your ticket was generated correctly. If you see your ticket, SUCCESS! If your new ticket was not created within 5 seconds, continue to the next step. 
+3. Log in to AWS. Navigate to your Lambda function. Click on "Monitoring." Click on "View Logs in CloudWatch"
+4. View the log stream that was generated. This will give you some ideas as to why your ticket failed to be generated. Most likely, there are some custom fields you need to set to create tickets or your Configs were not properly configured. When you update the code, you will have to run the setup.sh again and reupload the zip file.  
+
+
+## Running tests
+1. To run the unit tests you must be in the project root directory and have nose installed 
+``` nosetests tests/ ``` 
+
+## Contributing
+1. Fork the repository.
+2. Make your changes.
+3. Add unit tests.
+4. Ensure unit tests pass.
+5. Submit pull-request. Please make sure your commit message contains a helpful comment. Please ensure you add a comment alongside your pull-request showing proof that your code works.
 
