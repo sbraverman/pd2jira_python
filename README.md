@@ -1,4 +1,4 @@
-# pd2jira-python
+# pd2jira_python
 Generate JIRA tickets from Pager Duty alerts using Amazon Web Services (AWS) Lambda!
 
 ## What is pd2jira\_python?
@@ -11,58 +11,58 @@ pd2jira\_python uses the following technologies:
 * AWS API Gateway
 * PagerDuty Webhooks
 
-## Let's Get Started!
+## Let's get started!
 pd2jira-python will be up and running within minutes. Just follow this guide!
 
 1. Fork this project into your account and clone into local directory
-
-``` bash 
-git clone git@github.com:<your_github_handle>/pd2jira-python.git
-```
+  ``` bash 
+  git clone git@github.com:<your_github_handle>/pd2jira-python.git
+  ```
 _note: replace <your_github_handle> with your Github handle_
 
 2. Replace the comments in the Configs file with your credentials
 _pd2jira-python/pd2jira-python/Configs.yml_
 Explanations:
-* jira_url -- the site which your JIRA application is hosted from
-* jira_username -- Username for which the JIRA tickets will be "created by." User must be registered with your JIRA account. 
-* jira_password -- Password for the above user. 
-* jira_project -- the project for which the ticket will be generated for. If DEVOPS was your project, ticket URL would be: https://<your_jira_site>.jira.com/browse/DEVOPS-6756 
-Examples (from explanations above):
-``` yaml
-jira_url: https://<your_jira_site>.jira.com 
-jira_username: Team_Account
-jira_password: topsecretpassword
-jira_project: DEVOPS
-```
+  * jira_url -- the site which your JIRA application is hosted from
+  * jira_username -- Username for which the JIRA tickets will be "created by." User must be registered with your JIRA account. 
+  * jira_password -- Password for the above user. 
+  * jira_project -- the project for which the ticket will be generated for. If DEVOPS was your project, ticket URL would be: https://<your_jira_site>.jira.com/browse/DEVOPS-6756 
+  * Examples (from explanations above):
+  ``` yaml
+  jira_url: https://<your_jira_site>.jira.com 
+  jira_username: Team_Account
+  jira_password: topsecretpassword
+  jira_project: DEVOPS
+  ```
 
 3. Download dependencies and package project together into zip file: lambda.zip
-_inside project root directory_
-``` bash
-bash setup.sh
-```  
+  _inside project root directory:_
+  ``` bash
+  bash setup.sh
+  ```  
 
 4. Upload lambda file to AWS
   1. Log into your AWS account and navigate to Lambda
   2. Click on "Create a Lambda Function"
-  3. Select Python 2.7 as language and "microsoft-http-endpoint." Click next.
+  3. Select Python 2.7 as language and "microsoft-http-endpoint" blueprint. Click next.
   4. Configure your Lambda function. Give it a name and description.
-  5. For Lambda function code, select zip file. Upload the lambda.zip file from Step 3.
+  5. For Lambda function code, select zip file. Upload the lambda.zip file from Step 2.
   6. Set Lambda function handler and code
     * Handler: alertToTicket.lambda_handler
-    * Role should be: "lambda_basic_execution"
+    * Role: "lambda_basic_execution"
   7. Advanced settings. 128mb and 5 seconds should be plenty. 
   8. No VPC necessary
   9. Configure Endpoints -- The only defaults that need to be changed:
     * Method: Post
     * Security: Open 
   10. Review and submit. Lambda is set up!
-  11. Navigate to "API Endpoints" and copy the API endpoint URL (you will need this in the next step). 
+  11. Navigate to "API Endpoints" and copy the API endpoint URL (you will need this for the next step). 
 
 5. Set up Pager Duty webhook.
-  1. Select a service you would like to create tickets with or create a new service
+  1. Navigate to your Pager Duty account
+  1. Select a service you would like to create JIRA tickets from or create a new service
   2. Click on "Add Webhook"
-  3. Give your webhook a name and paste the URL from step 11 in. If you forgot to copy the API endpoint URL, go to AWS, navigate to Lambda, select your newly created Lambda function, and click on "API Endpoints."
+  3. Give your webhook a name and paste the URL from the previous step. If you forgot to copy the API endpoint URL, go to AWS, navigate to Lambda, select your newly created Lambda function, and click on "API Endpoints."
   4. You are done! Let's test it out
 
 ## Test your Lambda function
@@ -74,8 +74,11 @@ bash setup.sh
 
 
 ## Running tests
-1. To run the unit tests you must be in the project root directory and have nose installed 
-``` nosetests tests/ ``` 
+1. To run the unit tests you must be in the project root directory and have nose installed
+
+  ```
+  nosetests tests/ 
+  ``` 
 
 ## Contributing
 1. Fork the repository.
