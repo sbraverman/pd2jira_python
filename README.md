@@ -21,7 +21,7 @@ pd2jira-python will be up and running within minutes. Just follow this guide!
 _note: replace <your_github_handle> with your Github handle_
 
 2. Replace the comments in the Configs file with your credentials
-_pd2jira-python/pd2jira-python/Configs.yml_
+_pd2jira-python/pd2jira-python/configs.yml_
 Explanations:
   * jira_url -- the site which your JIRA application is hosted from
   * jira_username -- Username for which the JIRA tickets will be "created by." User must be registered with your JIRA account. 
@@ -34,6 +34,7 @@ Explanations:
   jira_password: topsecretpassword
   jira_project: DEVOPS
   ```
+  Add custom configurations! (Look at configs.yml for example. 
 
 3. Download dependencies and package project together into zip file: lambda.zip
   _inside project root directory:_
@@ -46,7 +47,7 @@ Explanations:
   2. Click on "Create a Lambda Function"
   3. Select Python 2.7 as language and "microsoft-http-endpoint" blueprint. Click next.
   4. Configure your Lambda function. Give it a name and description.
-  5. For Lambda function code, select zip file. Upload the lambda.zip file from Step 2.
+  5. For Lambda function code, select zip file. Upload the lambda.zip file from Step 3.
   6. Set Lambda function handler and code
     * Handler: alertToTicket.lambda_handler
     * Role: "lambda_basic_execution"
