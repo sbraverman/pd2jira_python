@@ -1,3 +1,4 @@
+*
 
 !README.md
 !*.py
@@ -9,5 +10,5 @@
 !tests/*.py
 !tests/stubs/*.json
 !CHANGES
+!*.yml
 
-*
