@@ -1,4 +1,4 @@
-# pd2jira_python
+# pd2jira_python [![Build Status](https://travis-ci.org/sbraverman/pd2jira_python.svg)](https://travis-ci.org/sbraverman/pd2jira_python)
 Generate JIRA tickets from Pager Duty alerts using Amazon Web Services (AWS) Lambda!
 
 ## What is pd2jira\_python?
