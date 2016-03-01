@@ -1,5 +1,6 @@
 *
 
+!tests/*
 !README.md
 !*.py
 !pd2jira_python/*.py
@@ -9,6 +10,7 @@
 !setup.sh
 !tests/*.py
 !tests/stubs/*.json
+!tests/requirements.txt
 !CHANGES
 !*.yml
 

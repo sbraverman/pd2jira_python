@@ -1,5 +1,2 @@
 requests
 pyaml
-mock
-boto3
-nose

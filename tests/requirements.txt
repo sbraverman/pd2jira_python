@@ -1,0 +1,5 @@
+nose
+boto3
+requests
+pyaml
+mock
